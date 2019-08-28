@@ -1,1 +1,1 @@
-NrkScraper
+Nrk
