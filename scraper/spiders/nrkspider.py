@@ -25,15 +25,6 @@ def pictureurl_to_id(url):
     split_url = url.split('/')
     return split_url[len(split_url)-1]
 
-class nrksitemapcounter(SitemapSpider):
-	name = 'nrk_sitemapcounter'
-	itemap_urls = ['https://www.nrk.no/sitemap.xml']
-
-	def parse(self, response):
-		id = articleurl_to_id(url)
-		with open('sitemap_ids.csv', 'a+') as f:
-		        f.write(str(id))
-		        f.write('\n')
 
 class nrkspider(SitemapSpider):
     name = 'nrk_spider'
@@ -172,7 +163,4 @@ class nrkspider(SitemapSpider):
         self.parsed_ids = []
 
 
-# Define here the models for your scraped items
-#
-# See documentation in:
-# https://doc.scrapy.org/en/latest/topics/items.html
+
